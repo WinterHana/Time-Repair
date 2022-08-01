@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    // FixedUpdate가 정석인데 그렇게 하면 점프가 잘 안됨
     void Update()
     {
         MoveX();
@@ -86,7 +87,7 @@ public class PlayerController : MonoBehaviour
     }
     IEnumerator JumpDelay()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.01f);
         isJumpDelay = false;
     }
 
