@@ -21,7 +21,7 @@ public class RepairRateScoreUp : MonoBehaviour
         {
             GetComponent<AudioSource>().Play();
             RepairRate.score1 += 1;
-            // this.gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
             Score.score -= 1;
         }
     }

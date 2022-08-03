@@ -7,6 +7,7 @@ public class Boom : MonoBehaviour
     public GameObject room;
     bool follow = false;
     public static int a = 0;
+
     void Start()
     {
         Invoke("OnInvoke", 3.0f);
