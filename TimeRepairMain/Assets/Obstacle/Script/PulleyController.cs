@@ -5,7 +5,7 @@ using UnityEngine;
 public class PulleyController : MonoBehaviour
 {
     GameObject left, right; 
-    GameObject wheel;
+    // GameObject wheel; // 220805 줄 연출할 때 수정할 예정
     Rigidbody2D LeftRigid, RightRigid;
     internal Collider2D LeftCollider, RightCollider;
 
@@ -27,7 +27,7 @@ public class PulleyController : MonoBehaviour
         RightCollider = right.GetComponent<Collider2D>();
 
         // 톱니바퀴 가져오기
-        wheel = transform.GetChild(3).gameObject;
+        // wheel = transform.GetChild(3).gameObject;
     }
 
     void FixedUpdate()
@@ -56,7 +56,7 @@ public class PulleyController : MonoBehaviour
     {
         LeftRigid.velocity = Vector2.up * speed * Time.deltaTime;
         RightRigid.velocity = Vector2.down * speed * Time.deltaTime; 
-        wheel.transform.Rotate(new Vector3(0, 0, -1), speed * Time.deltaTime);
+        // wheel.transform.Rotate(new Vector3(0, 0, -1), speed * Time.deltaTime);
     }
 
     // 2. 왼쪽이 밑으로
@@ -64,7 +64,7 @@ public class PulleyController : MonoBehaviour
     {
         RightRigid.velocity = Vector2.up * speed * Time.deltaTime;
         LeftRigid.velocity = Vector2.down * speed * Time.deltaTime;
-        wheel.transform.Rotate(new Vector3(0, 0, 1), speed * Time.deltaTime);
+        // wheel.transform.Rotate(new Vector3(0, 0, 1), speed * Time.deltaTime);
     }
 
     // 3. 멈춤 : internal로 선언해서 동일 프로젝트에만 자유롭게 사용
@@ -72,6 +72,6 @@ public class PulleyController : MonoBehaviour
     {
         LeftRigid.velocity = Vector2.zero;
         RightRigid.velocity = Vector2.zero;
-        wheel.transform.Rotate(new Vector3(0, 0, 0), 0.0f);
+        // wheel.transform.Rotate(new Vector3(0, 0, 0), 0.0f);
     }
 }
