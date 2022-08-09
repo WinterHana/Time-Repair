@@ -12,7 +12,7 @@ public class PendulumController : MonoBehaviour
 
     private void Awake()
     {
-        lerpTime += StartAngle;        
+        lerpTime += StartAngle;
     }
 
     private void Update()
